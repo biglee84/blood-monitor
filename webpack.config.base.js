@@ -15,6 +15,9 @@ Object.assign(env, {
 });
 
 module.exports = {
+  stats:{
+      errorDetails: true
+  },
   target: 'web',
 
   entry: [
