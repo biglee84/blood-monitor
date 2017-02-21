@@ -1,23 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-    BrowserRouter as Router,
-    Route,
-    Link
+import { Router, Route, IndexRoute, browserHistory } from "react-router"
 
-} from 'react-router-dom';
 
 import Main from './components/Main';
-import Home from './components/Home';
-
-
-
+import Dashboard from './components/dashboard/Dashboard';
 
 
 ReactDOM.render(
-    <Router>
+    <Router history={browserHistory}>
         <Route path="/" component={Main}>
-            <Route path="about" component={Home}/>
+            <IndexRoute component={Dashboard} />
         </Route>
     </Router>,
   document.getElementById('app')
