@@ -1,17 +1,17 @@
 import React from 'react';
+import { Router, Link } from "react-router"
 
-class MenuList extends React.Component {
+class MainMenu extends React.Component {
 
     render(){
         return (
-       <div>
-           <ul>
-               <li>Settings</li>
-           </ul>
-       </div>
+            <ul>
+               <li> <Link to={`/log`}>log Reading</Link></li>
+
+       </ul>
         )
     }
 }
 
-export default MenuList
+export default MainMenu
 

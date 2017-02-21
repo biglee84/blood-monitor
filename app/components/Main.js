@@ -4,7 +4,7 @@ import Header from './header/Header';
 const Main = ({children, history}) => {
   return (
     <div className="main-container">
-    <Header />
+    <Header history={history}/>
       <div className="container">
         {children}
       </div>

@@ -1,7 +1,16 @@
 .userContainer{
   float:right;
   width:auto;
-  padding:0 30px;
+  min-width:150px;
+  margin:0 30px;
+  cursor: pointer;
+  position:relative;
+  a{
+    color:#fff;
+    &:hover{
+      text-decoration:none;
+    }
+  }
   img{
     width:40px;
     height:40px;
@@ -11,5 +20,31 @@
   }
   span{
 
+  }
+
+  .userMenu{
+    background:#444;
+    width:100%;
+    height:auto;
+    padding-bottom:10px;
+    position:absolute;
+    ul{
+      margin:0;
+      padding:0;
+      padding-left:15px;
+    }
+    li{
+      width:100%;
+      color:#fff;
+      list-style:none;
+      margin-bottom:5px;
+    }
+  }
+
+  .active{
+    background:#444;
+    span{
+      color:#fff;
+    }
   }
 }
