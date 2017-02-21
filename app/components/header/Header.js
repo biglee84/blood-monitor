@@ -1,11 +1,16 @@
 import React from 'react';
 import User from './user';
 
+require ('../../styles/components/header/_base.scss')
+
 class Header extends React.Component {
     render(){
         return (
             <div className="headerContainer">
-               <User />
+                <div className="container">
+                    <img className="mainLogo" src="assets/logo.png" />
+                    <User />
+                </div>
             </div>
         )
     }

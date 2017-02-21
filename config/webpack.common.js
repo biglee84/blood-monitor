@@ -43,11 +43,12 @@ module.exports = function (options) {
             'main': "./app/App.js"
         },
         output: {
-            filename: "public/bundle.js"
+            path: helpers.root('public'),
+            filename: "bundle.js"
         },
         resolve: {
             modules: ['node_modules'],
-            extensions: ['.js', '.json','.sass'],
+            extensions: ['.js', '.json','.scss'],
 
 
         },
@@ -88,7 +89,7 @@ module.exports = function (options) {
         },
 
         plugins: [
-            new ExtractTextPlugin('public/[name].css'),
+            new ExtractTextPlugin('[name].css'),
 
 
             new AssetsPlugin({
