@@ -1,29 +1,27 @@
 import React from 'react';
+import getData from '../../utils/helpers';
 import CardList from './CardList.js'
 
 class Dashboard extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            lastReading: [],
+            weeklyAverage: []
+        }
     }
-    tempSetTime(){
-        return new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000 ).toLocaleString()
+    componentDidMount(){
+        var data = getData()
+            this.setState({
+                lastReading: data.lastReading,
+                weeklyAverage: data.weeklyAverage
+            })
     }
 
-    getData(){
-        return [
-                {type: 'single', name : 'Last Reading', time : '22/02/2017, 18:48:37', reading : '5.5'},
-                {type: 'average', name : '7 Day Average', reading : '8.4'},
-                {type: 'average', name : 'Monthly Average', reading : '5.4', graphData : {
-                    readings : ['3','5.5','6.3','6.0']
-                    }
-                }
-            ]
-    }
     render() {
         return(
-
-                <CardList cardData={this.getData()}/>
+            <CardList cardData={this.state}/>
 
         )
     }

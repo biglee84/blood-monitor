@@ -1,14 +1,17 @@
 import axios from 'axios'
 
-function getRepos(username){
-  return axios.get(`https://api.github.com/users/${username}/repos`);
+var lastReading = require('././fakeDataLastReading.json');
+var weeklyAverage = require('./fakeDataWeekAverage.json');
+
+function getLastReading(){
+  return lastReading
 }
 
-function getUserInfo(username){
-  return axios.get(`https://api.github.com/users/${username}`);
+function getWeekAverage(){
+  return weeklyAverage
 }
 
-export default function getGithubInfo(username){
-  return axios.all([getRepos(username), getUserInfo(username)])
-    .then((arr) => ({repos: arr[0].data,bio: arr[1].data}))
+export default function getData(){
+  console.log(lastReading[0])
+  return {lastReading: lastReading[0],weeklyAverage: weeklyAverage[0]}
 }

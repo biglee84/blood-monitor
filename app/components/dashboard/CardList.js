@@ -9,10 +9,8 @@ class CardList extends React.Component{
 
 
     render() {
-         var cardInfo = this.props.cardData.map(function(data,index) {
-
+        var cardInfo = this.props.cardData.map(function(data,index) {
              return  <Card key={index} {...data}  />
-
          });
          return(
 

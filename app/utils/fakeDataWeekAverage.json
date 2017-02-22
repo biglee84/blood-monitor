@@ -1,0 +1,18 @@
+[
+    {
+        "type" : "average", 
+        "name" : "7 Day Average", 
+        "reading" : "8.4",
+        "graphData" : {
+            "readings" : [{
+                "monday":".63",
+                "tuesday":"5.5",
+                "wednesday":"6.3",
+                "thursday":"6.0",
+                "friday":"7.0",
+                "saturday":"16.0",
+                "sunday":"7.4.0"
+            }]
+        }
+    }
+]
