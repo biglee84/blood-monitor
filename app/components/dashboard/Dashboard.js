@@ -12,16 +12,20 @@ class Dashboard extends React.Component {
         }
     }
     componentDidMount(){
-        var data = getData()
+        getData().then(function(data){
+            console.log('get data',data)
             this.setState({
                 lastReading: data.lastReading,
                 weeklyAverage: data.weeklyAverage
             })
+        }.bind(this))
+
     }
 
     render() {
         return(
-            <CardList cardData={this.state}/>
+            <div></div>
+            //<CardList cardData={this.state}/>
 
         )
     }

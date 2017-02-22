@@ -4,7 +4,6 @@ import Card from './Card'
 class CardList extends React.Component{
     constructor(props){
         super(props);
-        console.log(props)
     }
 
 

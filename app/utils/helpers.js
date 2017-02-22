@@ -1,17 +1,14 @@
 import axios from 'axios'
 
-var lastReading = require('././fakeDataLastReading.json');
-var weeklyAverage = require('./fakeDataWeekAverage.json');
-
 function getLastReading(){
-  return lastReading
+    return axios.get(`./fakeDataLastReading.json`);
 }
 
 function getWeekAverage(){
-  return weeklyAverage
+  return axios.get(`./fakeDataWeekAverage.json`);
 }
 
 export default function getData(){
-  console.log(lastReading[0])
-  return {lastReading: lastReading[0],weeklyAverage: weeklyAverage[0]}
+  return axios.all([getLastReading(), getWeekAverage()])
+    .then((arr) => ({lastReading: arr[0].data,weeklyAverage: arr[1].data}))
 }
