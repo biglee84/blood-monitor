@@ -4,6 +4,12 @@
   overflow: hidden;
   background-color: #3598dc;
   margin-top:25px;
+  &.hypo{
+    background-color: #9d1800;
+    .visual {
+        color: #fff;
+      }
+  }
   a,span{color:#fff;}
 
   .visual {
@@ -14,7 +20,7 @@
     padding-top: 10px;
     padding-left: 15px;
     margin-bottom: 15px;
-    font-size: 35px;
+    font-size: 60px;
     line-height: 35px;
   }
   .details {
@@ -22,12 +28,12 @@
     right: 15px;
     padding-right: 15px;
     .number {
-      padding-top: 25px;
+      padding-top: 10px;
       text-align: right;
       font-size: 34px;
       line-height: 36px;
       letter-spacing: -1px;
-      margin-bottom: 0;
+      margin-bottom: 5px;
       font-weight: 300;
     }
     .desc {
@@ -36,6 +42,9 @@
       letter-spacing: 0;
       font-weight: 300;
       color:#fff;
+    }
+    .viewGraph{
+      float:right;
     }
   }
 }
