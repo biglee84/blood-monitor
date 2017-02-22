@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import Router from 'react-router'
 
-class LogReading extends Component {
+class Settings extends Component {
 
     constructor(props) {
         super(props)
@@ -12,23 +12,21 @@ class LogReading extends Component {
 
 
     }
-    submitReading(){
-        this.props.router.transitionTo("/home/")
-    }
+
 
     render() {
         return (
-            <form  onSubmit={(e) => this.submitReading(e)}>
-                <button type="submit"> Submit Reading </button>
-            </form>
+            <div>
+                Settings
+            </div>
         );
     }
 }
 
-LogReading.propTypes = {
+Settings.propTypes = {
 };
-LogReading.defaultProps = {
+Settings.defaultProps = {
 
 };
 
-export default LogReading;
+export default Settings;

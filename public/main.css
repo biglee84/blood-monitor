@@ -1,8 +1,78 @@
 .userContainer {
-  float: right; }
+  float: right;
+  width: auto;
+  min-width: 150px;
+  margin: 0 30px;
+  cursor: pointer;
+  position: relative; }
+  .userContainer a {
+    color: #fff; }
+    .userContainer a:hover {
+      text-decoration: none; }
+  .userContainer img {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 30px; }
+  .userContainer .userMenu {
+    background: #444;
+    width: 100%;
+    height: auto;
+    padding-bottom: 10px;
+    position: absolute; }
+    .userContainer .userMenu ul {
+      margin: 0;
+      padding: 0;
+      padding-left: 15px; }
+    .userContainer .userMenu li {
+      width: 100%;
+      color: #fff;
+      list-style: none;
+      margin-bottom: 5px; }
+  .userContainer .active {
+    background: #444; }
+    .userContainer .active span {
+      color: #fff; }
 .headerContainer {
-  height: 300px;
+  height: auto;
+  max-height: 90px;
   width: 100%;
   background: #ccc; }
+  .headerContainer .mainLogo {
+    width: 105px;
+    margin-top: 5px; }
+  .headerContainer span {
+    color: #444; }
+.dashboard-stat {
+  display: block;
+  margin-bottom: 25px;
+  overflow: hidden; }
+  .dashboard-stat .visual {
+    width: 80px;
+    height: 80px;
+    display: block;
+    float: left;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    font-size: 35px;
+    line-height: 35px; }
+  .dashboard-stat .details {
+    position: absolute;
+    right: 15px;
+    padding-right: 15px; }
+    .dashboard-stat .details .number {
+      padding-top: 25px;
+      text-align: right;
+      font-size: 34px;
+      line-height: 36px;
+      letter-spacing: -1px;
+      margin-bottom: 0;
+      font-weight: 300; }
+    .dashboard-stat .details .dashboard-stat .details .desc {
+      text-align: right;
+      font-size: 16px;
+      letter-spacing: 0;
+      font-weight: 300; }
 
 /*# sourceMappingURL=main.css.map*/

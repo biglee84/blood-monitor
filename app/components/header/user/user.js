@@ -3,34 +3,36 @@ import React, {
     PropTypes,
 } from 'react';
 
-require ('../../styles/components/header/_user.scss')
+import UserMenu from './userMenu';
+
+require ('../../../styles/components/header/_user.scss')
 
 class User extends Component {
     constructor(props) {
         super(props);
         this.state = {isUserMenuVisible: false};
 
-        // This binding is necessary to make `this` work in the callback
-        this.showUserMenu = this.showUserMenu.bind(this);
+    }
+    componentDidMount(){
+        this.setState({isUserMenuVisible: false})
     }
     showUserMenu(e){
         e.preventDefault();
         this.setState(prevState => ({
-            isUserMenuVisible: !prevState.isToggleOn
+            isUserMenuVisible: !prevState.isUserMenuVisible
         }));
-        alert('I have been clicked')
+
     }
     render() {
         return (
-            <div className="userContainer" onClick={this.showUserMenu}>
-                <img src={this.props.avatar} />
-                <span>{this.props.username}</span>
+            <div className="userContainer">
+                <div onClick={(evt) => this.showUserMenu(evt)} className={this.state.isUserMenuVisible ? 'active' : ''}>
+                    <img src={this.props.avatar} />
+                    <span>{this.props.username}</span>
+                </div>
                 {
-                    this.state.isUserMenuVisible
-                        ? <userMenu />
-                        : null
+                    this.state.isUserMenuVisible ? <div className="userMenu"><UserMenu /> </div> : null
                 }
-                {}
             </div>
         );
     }
@@ -38,7 +40,9 @@ class User extends Component {
 
 User.propTypes = {
     username: React.PropTypes.string,
-    avatar: React.PropTypes.string
+    avatar: React.PropTypes.string,
+    userMenu: React.PropTypes.node
+
 
 };
 User.defaultProps = {
