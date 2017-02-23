@@ -7,44 +7,33 @@ class Dashboard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lastReading: [],
-            weeklyAverage: []
+            cardReadings: []
         }
     }
     componentDidMount(){
         getData().then(function(data){
-            console.log('get data',data)
+            let formattedData = data.cardReadings[0].data.concat(data.cardReadings[1].data);
             this.setState({
-                lastReading: data.lastReading,
-                weeklyAverage: data.weeklyAverage
+                cardReadings: formattedData
             })
         }.bind(this))
 
     }
 
+
     render() {
         return(
-            <div></div>
-            //<CardList cardData={this.state}/>
+           // <div></div>
+            <CardList cardReadings={this.state.cardReadings}/>
 
         )
     }
 }
 Dashboard.propTypes = {
-    type : React.PropTypes.string.isRequired,
-    name : React.PropTypes.string.isRequired,
-    time : React.PropTypes.string.isRequired,
-    reading : React.PropTypes.string.isRequired,
-    graphData : React.PropTypes.array
-
+    cardReadings: React.PropTypes.array.isRequired,
 };
 Dashboard.defaultProps = {
-    type: 'Single',
-    name : 'A Reading',
-    time : new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60000 ).toLocaleString(),
-    reading : '7.4',
-    graphData : []
-
+    cardReadings: [],
 };
 
 export default Dashboard;
